@@ -75,7 +75,7 @@
             this.tpServer = new System.Windows.Forms.TabPage();
             this.mtbIpAddress = new System.Windows.Forms.MaskedTextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtParamLine = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.mtbTimeLimit = new System.Windows.Forms.MaskedTextBox();
             this.mtbFragLimit = new System.Windows.Forms.MaskedTextBox();
@@ -346,6 +346,7 @@
             this.rbDoom.TabStop = true;
             this.rbDoom.Text = "Doom";
             this.rbDoom.UseVisualStyleBackColor = true;
+            this.rbDoom.CheckedChanged += new System.EventHandler(this.rbDoom_CheckedChanged);
             // 
             // rbHexen
             // 
@@ -538,7 +539,7 @@
             // 
             this.tpServer.Controls.Add(this.mtbIpAddress);
             this.tpServer.Controls.Add(this.label16);
-            this.tpServer.Controls.Add(this.textBox6);
+            this.tpServer.Controls.Add(this.txtParamLine);
             this.tpServer.Controls.Add(this.label15);
             this.tpServer.Controls.Add(this.mtbTimeLimit);
             this.tpServer.Controls.Add(this.mtbFragLimit);
@@ -572,12 +573,12 @@
             this.label16.TabIndex = 11;
             this.label16.Text = "Endereço IP (IPv4)";
             // 
-            // textBox6
+            // txtParamLine
             // 
-            this.textBox6.Location = new System.Drawing.Point(6, 98);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(459, 20);
-            this.textBox6.TabIndex = 10;
+            this.txtParamLine.Location = new System.Drawing.Point(6, 98);
+            this.txtParamLine.Name = "txtParamLine";
+            this.txtParamLine.Size = new System.Drawing.Size(459, 20);
+            this.txtParamLine.TabIndex = 10;
             // 
             // label15
             // 
@@ -765,7 +766,7 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtParamLine;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.MaskedTextBox mtbIpAddress;
         private System.Windows.Forms.Label label16;
