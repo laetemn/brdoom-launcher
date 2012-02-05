@@ -404,7 +404,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(302, 197);
+            this.textBox1.Location = new System.Drawing.Point(139, 197);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(55, 20);
             this.textBox1.TabIndex = 9;
@@ -420,7 +420,7 @@
             "SkullTag",
             "ZDoom",
             "ZDaemon"});
-            this.cbSourcePort.Location = new System.Drawing.Point(175, 197);
+            this.cbSourcePort.Location = new System.Drawing.Point(12, 197);
             this.cbSourcePort.Name = "cbSourcePort";
             this.cbSourcePort.Size = new System.Drawing.Size(121, 21);
             this.cbSourcePort.TabIndex = 5;
@@ -428,7 +428,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(299, 181);
+            this.label5.Location = new System.Drawing.Point(139, 181);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(33, 13);
             this.label5.TabIndex = 4;
@@ -437,7 +437,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(172, 181);
+            this.label1.Location = new System.Drawing.Point(11, 181);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 0;
