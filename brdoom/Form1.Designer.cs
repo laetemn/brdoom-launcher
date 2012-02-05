@@ -42,22 +42,22 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpLauncher = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.radioButton14 = new System.Windows.Forms.RadioButton();
-            this.radioButton13 = new System.Windows.Forms.RadioButton();
-            this.radioButton12 = new System.Windows.Forms.RadioButton();
-            this.radioButton11 = new System.Windows.Forms.RadioButton();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
+            this.rbNightmare = new System.Windows.Forms.RadioButton();
+            this.rbUltra = new System.Windows.Forms.RadioButton();
+            this.rbPlenty = new System.Windows.Forms.RadioButton();
+            this.rbRough = new System.Windows.Forms.RadioButton();
+            this.rbYoung = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rbCooperative = new System.Windows.Forms.RadioButton();
-            this.radioButton8rbDeathMatch = new System.Windows.Forms.RadioButton();
+            this.rbDeathMatch = new System.Windows.Forms.RadioButton();
             this.rbSinglePlayer = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rbDoom = new System.Windows.Forms.RadioButton();
+            this.rbHexen = new System.Windows.Forms.RadioButton();
+            this.rbHeretic = new System.Windows.Forms.RadioButton();
+            this.rbPlutonia = new System.Windows.Forms.RadioButton();
+            this.rbTnt = new System.Windows.Forms.RadioButton();
+            this.rbDoom2 = new System.Windows.Forms.RadioButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.cbSourcePort = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -208,11 +208,11 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.radioButton14);
-            this.groupBox3.Controls.Add(this.radioButton13);
-            this.groupBox3.Controls.Add(this.radioButton12);
-            this.groupBox3.Controls.Add(this.radioButton11);
-            this.groupBox3.Controls.Add(this.radioButton10);
+            this.groupBox3.Controls.Add(this.rbNightmare);
+            this.groupBox3.Controls.Add(this.rbUltra);
+            this.groupBox3.Controls.Add(this.rbPlenty);
+            this.groupBox3.Controls.Add(this.rbRough);
+            this.groupBox3.Controls.Add(this.rbYoung);
             this.groupBox3.Location = new System.Drawing.Point(175, 6);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(157, 139);
@@ -220,65 +220,65 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Skill";
             // 
-            // radioButton14
+            // rbNightmare
             // 
-            this.radioButton14.AutoSize = true;
-            this.radioButton14.Location = new System.Drawing.Point(7, 110);
-            this.radioButton14.Name = "radioButton14";
-            this.radioButton14.Size = new System.Drawing.Size(93, 17);
-            this.radioButton14.TabIndex = 4;
-            this.radioButton14.TabStop = true;
-            this.radioButton14.Text = "NIGHTMARE!";
-            this.radioButton14.UseVisualStyleBackColor = true;
+            this.rbNightmare.AutoSize = true;
+            this.rbNightmare.Location = new System.Drawing.Point(7, 110);
+            this.rbNightmare.Name = "rbNightmare";
+            this.rbNightmare.Size = new System.Drawing.Size(93, 17);
+            this.rbNightmare.TabIndex = 4;
+            this.rbNightmare.TabStop = true;
+            this.rbNightmare.Text = "NIGHTMARE!";
+            this.rbNightmare.UseVisualStyleBackColor = true;
             // 
-            // radioButton13
+            // rbUltra
             // 
-            this.radioButton13.AutoSize = true;
-            this.radioButton13.Location = new System.Drawing.Point(7, 87);
-            this.radioButton13.Name = "radioButton13";
-            this.radioButton13.Size = new System.Drawing.Size(91, 17);
-            this.radioButton13.TabIndex = 3;
-            this.radioButton13.TabStop = true;
-            this.radioButton13.Text = "Ultra-Violence";
-            this.radioButton13.UseVisualStyleBackColor = true;
+            this.rbUltra.AutoSize = true;
+            this.rbUltra.Location = new System.Drawing.Point(7, 87);
+            this.rbUltra.Name = "rbUltra";
+            this.rbUltra.Size = new System.Drawing.Size(91, 17);
+            this.rbUltra.TabIndex = 3;
+            this.rbUltra.TabStop = true;
+            this.rbUltra.Text = "Ultra-Violence";
+            this.rbUltra.UseVisualStyleBackColor = true;
             // 
-            // radioButton12
+            // rbPlenty
             // 
-            this.radioButton12.AutoSize = true;
-            this.radioButton12.Location = new System.Drawing.Point(7, 64);
-            this.radioButton12.Name = "radioButton12";
-            this.radioButton12.Size = new System.Drawing.Size(98, 17);
-            this.radioButton12.TabIndex = 2;
-            this.radioButton12.TabStop = true;
-            this.radioButton12.Text = "Hurt Me Plenty!";
-            this.radioButton12.UseVisualStyleBackColor = true;
+            this.rbPlenty.AutoSize = true;
+            this.rbPlenty.Location = new System.Drawing.Point(7, 64);
+            this.rbPlenty.Name = "rbPlenty";
+            this.rbPlenty.Size = new System.Drawing.Size(98, 17);
+            this.rbPlenty.TabIndex = 2;
+            this.rbPlenty.TabStop = true;
+            this.rbPlenty.Text = "Hurt Me Plenty!";
+            this.rbPlenty.UseVisualStyleBackColor = true;
             // 
-            // radioButton11
+            // rbRough
             // 
-            this.radioButton11.AutoSize = true;
-            this.radioButton11.Location = new System.Drawing.Point(7, 41);
-            this.radioButton11.Name = "radioButton11";
-            this.radioButton11.Size = new System.Drawing.Size(116, 17);
-            this.radioButton11.TabIndex = 1;
-            this.radioButton11.TabStop = true;
-            this.radioButton11.Text = "Hey, not too rough!";
-            this.radioButton11.UseVisualStyleBackColor = true;
+            this.rbRough.AutoSize = true;
+            this.rbRough.Location = new System.Drawing.Point(7, 41);
+            this.rbRough.Name = "rbRough";
+            this.rbRough.Size = new System.Drawing.Size(116, 17);
+            this.rbRough.TabIndex = 1;
+            this.rbRough.TabStop = true;
+            this.rbRough.Text = "Hey, not too rough!";
+            this.rbRough.UseVisualStyleBackColor = true;
             // 
-            // radioButton10
+            // rbYoung
             // 
-            this.radioButton10.AutoSize = true;
-            this.radioButton10.Location = new System.Drawing.Point(9, 18);
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(114, 17);
-            this.radioButton10.TabIndex = 0;
-            this.radioButton10.TabStop = true;
-            this.radioButton10.Text = "I\'m too yong to die!";
-            this.radioButton10.UseVisualStyleBackColor = true;
+            this.rbYoung.AutoSize = true;
+            this.rbYoung.Location = new System.Drawing.Point(9, 18);
+            this.rbYoung.Name = "rbYoung";
+            this.rbYoung.Size = new System.Drawing.Size(114, 17);
+            this.rbYoung.TabIndex = 0;
+            this.rbYoung.TabStop = true;
+            this.rbYoung.Text = "I\'m too yong to die!";
+            this.rbYoung.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.rbCooperative);
-            this.groupBox2.Controls.Add(this.radioButton8rbDeathMatch);
+            this.groupBox2.Controls.Add(this.rbDeathMatch);
             this.groupBox2.Controls.Add(this.rbSinglePlayer);
             this.groupBox2.Location = new System.Drawing.Point(338, 6);
             this.groupBox2.Name = "groupBox2";
@@ -299,16 +299,16 @@
             this.rbCooperative.UseVisualStyleBackColor = true;
             this.rbCooperative.CheckedChanged += new System.EventHandler(this.rbCooperative_CheckedChanged);
             // 
-            // radioButton8rbDeathMatch
+            // rbDeathMatch
             // 
-            this.radioButton8rbDeathMatch.AutoSize = true;
-            this.radioButton8rbDeathMatch.Location = new System.Drawing.Point(9, 43);
-            this.radioButton8rbDeathMatch.Name = "radioButton8rbDeathMatch";
-            this.radioButton8rbDeathMatch.Size = new System.Drawing.Size(84, 17);
-            this.radioButton8rbDeathMatch.TabIndex = 1;
-            this.radioButton8rbDeathMatch.TabStop = true;
-            this.radioButton8rbDeathMatch.Text = "DeathMatch";
-            this.radioButton8rbDeathMatch.UseVisualStyleBackColor = true;
+            this.rbDeathMatch.AutoSize = true;
+            this.rbDeathMatch.Location = new System.Drawing.Point(9, 43);
+            this.rbDeathMatch.Name = "rbDeathMatch";
+            this.rbDeathMatch.Size = new System.Drawing.Size(84, 17);
+            this.rbDeathMatch.TabIndex = 1;
+            this.rbDeathMatch.TabStop = true;
+            this.rbDeathMatch.Text = "DeathMatch";
+            this.rbDeathMatch.UseVisualStyleBackColor = true;
             // 
             // rbSinglePlayer
             // 
@@ -323,12 +323,12 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Controls.Add(this.radioButton6);
-            this.groupBox1.Controls.Add(this.radioButton5);
-            this.groupBox1.Controls.Add(this.radioButton4);
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.rbDoom);
+            this.groupBox1.Controls.Add(this.rbHexen);
+            this.groupBox1.Controls.Add(this.rbHeretic);
+            this.groupBox1.Controls.Add(this.rbPlutonia);
+            this.groupBox1.Controls.Add(this.rbTnt);
+            this.groupBox1.Controls.Add(this.rbDoom2);
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(163, 162);
@@ -336,71 +336,71 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "IWAD";
             // 
-            // radioButton1
+            // rbDoom
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 18);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(53, 17);
-            this.radioButton1.TabIndex = 11;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Doom";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbDoom.AutoSize = true;
+            this.rbDoom.Location = new System.Drawing.Point(6, 18);
+            this.rbDoom.Name = "rbDoom";
+            this.rbDoom.Size = new System.Drawing.Size(53, 17);
+            this.rbDoom.TabIndex = 11;
+            this.rbDoom.TabStop = true;
+            this.rbDoom.Text = "Doom";
+            this.rbDoom.UseVisualStyleBackColor = true;
             // 
-            // radioButton6
+            // rbHexen
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(6, 133);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(56, 17);
-            this.radioButton6.TabIndex = 4;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "Hexen";
-            this.radioButton6.UseVisualStyleBackColor = true;
+            this.rbHexen.AutoSize = true;
+            this.rbHexen.Location = new System.Drawing.Point(6, 133);
+            this.rbHexen.Name = "rbHexen";
+            this.rbHexen.Size = new System.Drawing.Size(56, 17);
+            this.rbHexen.TabIndex = 4;
+            this.rbHexen.TabStop = true;
+            this.rbHexen.Text = "Hexen";
+            this.rbHexen.UseVisualStyleBackColor = true;
             // 
-            // radioButton5
+            // rbHeretic
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(6, 110);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(59, 17);
-            this.radioButton5.TabIndex = 3;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Heretic";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.rbHeretic.AutoSize = true;
+            this.rbHeretic.Location = new System.Drawing.Point(6, 110);
+            this.rbHeretic.Name = "rbHeretic";
+            this.rbHeretic.Size = new System.Drawing.Size(59, 17);
+            this.rbHeretic.TabIndex = 3;
+            this.rbHeretic.TabStop = true;
+            this.rbHeretic.Text = "Heretic";
+            this.rbHeretic.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // rbPlutonia
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(6, 87);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(118, 17);
-            this.radioButton4.TabIndex = 2;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Plutonia Experiment";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.rbPlutonia.AutoSize = true;
+            this.rbPlutonia.Location = new System.Drawing.Point(6, 87);
+            this.rbPlutonia.Name = "rbPlutonia";
+            this.rbPlutonia.Size = new System.Drawing.Size(118, 17);
+            this.rbPlutonia.TabIndex = 2;
+            this.rbPlutonia.TabStop = true;
+            this.rbPlutonia.Text = "Plutonia Experiment";
+            this.rbPlutonia.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // rbTnt
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(6, 64);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(90, 17);
-            this.radioButton3.TabIndex = 1;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "TNT Evilution";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbTnt.AutoSize = true;
+            this.rbTnt.Location = new System.Drawing.Point(6, 64);
+            this.rbTnt.Name = "rbTnt";
+            this.rbTnt.Size = new System.Drawing.Size(90, 17);
+            this.rbTnt.TabIndex = 1;
+            this.rbTnt.TabStop = true;
+            this.rbTnt.Text = "TNT Evilution";
+            this.rbTnt.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbDoom2
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(6, 41);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(130, 17);
-            this.radioButton2.TabIndex = 0;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Doom 2 - Hel on Earth";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbDoom2.AutoSize = true;
+            this.rbDoom2.Location = new System.Drawing.Point(6, 41);
+            this.rbDoom2.Name = "rbDoom2";
+            this.rbDoom2.Size = new System.Drawing.Size(132, 17);
+            this.rbDoom2.TabIndex = 0;
+            this.rbDoom2.TabStop = true;
+            this.rbDoom2.Text = "Doom 2 - Hell on Earth";
+            this.rbDoom2.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
@@ -687,6 +687,7 @@
             this.btnDefault.TabIndex = 5;
             this.btnDefault.Text = "Padrão";
             this.btnDefault.UseVisualStyleBackColor = true;
+            this.btnDefault.Click += new System.EventHandler(this.btnDefault_Click);
             // 
             // Form1
             // 
@@ -769,22 +770,22 @@
         private System.Windows.Forms.MaskedTextBox mtbIpAddress;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton6;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rbDoom;
+        private System.Windows.Forms.RadioButton rbHexen;
+        private System.Windows.Forms.RadioButton rbHeretic;
+        private System.Windows.Forms.RadioButton rbPlutonia;
+        private System.Windows.Forms.RadioButton rbTnt;
+        private System.Windows.Forms.RadioButton rbDoom2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton rbCooperative;
-        private System.Windows.Forms.RadioButton radioButton8rbDeathMatch;
+        private System.Windows.Forms.RadioButton rbDeathMatch;
         private System.Windows.Forms.RadioButton rbSinglePlayer;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.RadioButton radioButton14;
-        private System.Windows.Forms.RadioButton radioButton13;
-        private System.Windows.Forms.RadioButton radioButton12;
-        private System.Windows.Forms.RadioButton radioButton11;
-        private System.Windows.Forms.RadioButton radioButton10;
+        private System.Windows.Forms.RadioButton rbNightmare;
+        private System.Windows.Forms.RadioButton rbUltra;
+        private System.Windows.Forms.RadioButton rbPlenty;
+        private System.Windows.Forms.RadioButton rbRough;
+        private System.Windows.Forms.RadioButton rbYoung;
     }
 }
 

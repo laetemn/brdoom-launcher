@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+// O parametro abaixo é necessário para iniciar programas externos
+using System.Diagnostics;
 
 namespace BrDOOM
 {
@@ -59,6 +61,12 @@ namespace BrDOOM
                 
             }
         }
+
+        private void btnDefault_Click(object sender, EventArgs e)
+        {
+            Process.Start(@"calc");
+        }
+
 
     }
 }
