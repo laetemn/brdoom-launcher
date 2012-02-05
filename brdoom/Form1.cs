@@ -67,6 +67,36 @@ namespace BrDOOM
             Process.Start(@"calc");
         }
 
+        private void rbDoom_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbDoom.Checked)
+            {
+                
+
+             //   Process.Start(@"zdoom.exe -iwad doom.wad");
+            }
+            else if (rbDoom2.Checked)
+            {
+                Process.Start(@"zdoom.exe -iwad doom2.wad");
+            }
+            else if (rbTnt.Checked)
+            {
+                Process.Start(@"zdoom.exe -iwad tnt.wad");
+            }
+            else if (rbPlutonia.Checked)
+            {
+                Process.Start(@"zdoom.exe -iwad plutonia.wad");
+            }
+            else if (rbHeretic.Checked)
+            {
+                Process.Start(@"zdoom.exe -iwad heretic.wad");
+            }
+            else if (rbHexen.Checked)
+            {
+                Process.Start(@"zdoom.exe -iwad hexen.wad");
+            }
+        }
+
 
     }
 }
