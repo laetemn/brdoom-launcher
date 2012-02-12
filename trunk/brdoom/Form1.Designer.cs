@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,43 +61,40 @@
             this.rbIwadTnt = new System.Windows.Forms.RadioButton();
             this.rbIwadDoom2 = new System.Windows.Forms.RadioButton();
             this.txtLevelWarp = new System.Windows.Forms.TextBox();
-            this.cbSourcePort = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tpPwads = new System.Windows.Forms.TabPage();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.tpServer = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.cbOldDeathmatch = new System.Windows.Forms.CheckBox();
+            this.cbNoSound = new System.Windows.Forms.CheckBox();
+            this.cbNoSfx = new System.Windows.Forms.CheckBox();
+            this.cbNoMusic = new System.Windows.Forms.CheckBox();
+            this.cbNoMouse = new System.Windows.Forms.CheckBox();
+            this.cbNoMonsters = new System.Windows.Forms.CheckBox();
+            this.cbAltDeath = new System.Windows.Forms.CheckBox();
+            this.cbHost = new System.Windows.Forms.CheckBox();
             this.mtbIpAddress = new System.Windows.Forms.MaskedTextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.txtCommandLine = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.mtbPlayers = new System.Windows.Forms.MaskedTextBox();
             this.mtbTimeLimit = new System.Windows.Forms.MaskedTextBox();
             this.mtbFragLimit = new System.Windows.Forms.MaskedTextBox();
-            this.mtbPlayers = new System.Windows.Forms.MaskedTextBox();
-            this.cbHost = new System.Windows.Forms.CheckBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.txtCommandLine = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnLaunch = new System.Windows.Forms.Button();
             this.btnDefault = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tpLauncher.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.tpPwads.SuspendLayout();
             this.tpServer.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -117,20 +116,22 @@
             this.toolStripMenuItem2,
             this.sairToolStripMenuItem});
             this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
-            this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.arquivoToolStripMenuItem.Text = "Arquivo";
+            this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.arquivoToolStripMenuItem.Text = "File";
             // 
             // abrirToolStripMenuItem
             // 
             this.abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
             this.abrirToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
-            this.abrirToolStripMenuItem.Text = "Abrir...";
+            this.abrirToolStripMenuItem.Text = "Open...";
+            this.abrirToolStripMenuItem.Click += new System.EventHandler(this.abrirToolStripMenuItem_Click);
             // 
             // salvarComoToolStripMenuItem
             // 
             this.salvarComoToolStripMenuItem.Name = "salvarComoToolStripMenuItem";
             this.salvarComoToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.salvarComoToolStripMenuItem.Text = "Salvar Como...";
+            this.salvarComoToolStripMenuItem.Click += new System.EventHandler(this.salvarComoToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -141,7 +142,8 @@
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
-            this.sairToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.Text = "Exit";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
             // ajudaToolStripMenuItem
             // 
@@ -150,25 +152,27 @@
             this.toolStripMenuItem1,
             this.sobreToolStripMenuItem});
             this.ajudaToolStripMenuItem.Name = "ajudaToolStripMenuItem";
-            this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.ajudaToolStripMenuItem.Text = "Ajuda";
+            this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.ajudaToolStripMenuItem.Text = "Help";
             // 
             // manualToolStripMenuItem
             // 
             this.manualToolStripMenuItem.Name = "manualToolStripMenuItem";
-            this.manualToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
-            this.manualToolStripMenuItem.Text = "Manual";
+            this.manualToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.manualToolStripMenuItem.Text = "User Manual";
+            this.manualToolStripMenuItem.Click += new System.EventHandler(this.manualToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(111, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(137, 6);
             // 
             // sobreToolStripMenuItem
             // 
             this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
-            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
-            this.sobreToolStripMenuItem.Text = "Sobre...";
+            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.sobreToolStripMenuItem.Text = "About...";
+            this.sobreToolStripMenuItem.Click += new System.EventHandler(this.sobreToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -181,8 +185,8 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tpLauncher);
-            this.tabControl1.Controls.Add(this.tpPwads);
             this.tabControl1.Controls.Add(this.tpServer);
+            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Location = new System.Drawing.Point(12, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -195,9 +199,7 @@
             this.tpLauncher.Controls.Add(this.groupBox2);
             this.tpLauncher.Controls.Add(this.groupBox1);
             this.tpLauncher.Controls.Add(this.txtLevelWarp);
-            this.tpLauncher.Controls.Add(this.cbSourcePort);
             this.tpLauncher.Controls.Add(this.label5);
-            this.tpLauncher.Controls.Add(this.label1);
             this.tpLauncher.Location = new System.Drawing.Point(4, 22);
             this.tpLauncher.Name = "tpLauncher";
             this.tpLauncher.Padding = new System.Windows.Forms.Padding(3);
@@ -417,222 +419,202 @@
             // 
             // txtLevelWarp
             // 
-            this.txtLevelWarp.Location = new System.Drawing.Point(139, 197);
+            this.txtLevelWarp.Location = new System.Drawing.Point(9, 187);
             this.txtLevelWarp.Name = "txtLevelWarp";
-            this.txtLevelWarp.Size = new System.Drawing.Size(55, 20);
+            this.txtLevelWarp.Size = new System.Drawing.Size(62, 20);
             this.txtLevelWarp.TabIndex = 9;
             this.txtLevelWarp.TextChanged += new System.EventHandler(this.txtLevelWarp_TextChanged);
-            // 
-            // cbSourcePort
-            // 
-            this.cbSourcePort.FormattingEnabled = true;
-            this.cbSourcePort.Items.AddRange(new object[] {
-            "ATB Doom (Legado)",
-            "BZDoom (Legado)",
-            "CGDoom (Legado)",
-            "Chocolate Doom",
-            "csDoom (Legado)",
-            "Doom 3D (Legado)",
-            "Doom64 EX",
-            "DoomGL (Legado)",
-            "Doom Legacy",
-            "Doom Plus (Legado)",
-            "Doomsday",
-            "EDGE (Legado)",
-            "Eternity Engine (Legado)",
-            "glBoom (Legado)",
-            "GZDoom",
-            "IA SDoom (Legado)",
-            "Mocha Doom (Legado)",
-            "Odamex",
-            "Power Doom (Legado)",
-            "PrBoom (Legado)",
-            "PrBoom+ (Legado)",
-            "ReMooD",
-            "Risen3D",
-            "SkullTag",
-            "Smack My Marine Up (Legado)",
-            "Vavoom (Legado)",
-            "WDMP (Legado)",
-            "Win32 Doom (Legado)",
-            "WinDoom (Legado)",
-            "WinMBF (Legado)",
-            "ZDaemon",
-            "ZDoom",
-            "ZDoomGL (Legado)"});
-            this.cbSourcePort.Location = new System.Drawing.Point(12, 197);
-            this.cbSourcePort.Name = "cbSourcePort";
-            this.cbSourcePort.Size = new System.Drawing.Size(121, 21);
-            this.cbSourcePort.TabIndex = 5;
-            this.cbSourcePort.Text = "Selecione...";
-            this.cbSourcePort.SelectedIndexChanged += new System.EventHandler(this.cbSourcePort_SelectedIndexChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(139, 181);
+            this.label5.Location = new System.Drawing.Point(9, 171);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(33, 13);
+            this.label5.Size = new System.Drawing.Size(62, 13);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Warp";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 181);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "SourcePort";
-            // 
-            // tpPwads
-            // 
-            this.tpPwads.Controls.Add(this.label14);
-            this.tpPwads.Controls.Add(this.label13);
-            this.tpPwads.Controls.Add(this.label12);
-            this.tpPwads.Controls.Add(this.label11);
-            this.tpPwads.Controls.Add(this.textBox5);
-            this.tpPwads.Controls.Add(this.textBox4);
-            this.tpPwads.Controls.Add(this.textBox3);
-            this.tpPwads.Controls.Add(this.textBox2);
-            this.tpPwads.Controls.Add(this.label8);
-            this.tpPwads.Location = new System.Drawing.Point(4, 22);
-            this.tpPwads.Name = "tpPwads";
-            this.tpPwads.Size = new System.Drawing.Size(468, 224);
-            this.tpPwads.TabIndex = 3;
-            this.tpPwads.Text = "PWADS";
-            this.tpPwads.UseVisualStyleBackColor = true;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(321, 35);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(43, 13);
-            this.label14.TabIndex = 8;
-            this.label14.Text = "Pwad 4";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(215, 35);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(43, 13);
-            this.label13.TabIndex = 7;
-            this.label13.Text = "Pwad 3";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(109, 35);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(43, 13);
-            this.label12.TabIndex = 6;
-            this.label12.Text = "Pwad 2";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(3, 35);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(43, 13);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "Pwad 1";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(324, 51);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 4;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(218, 51);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 3;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(112, 51);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 2;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(6, 51);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 1;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 11);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(203, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Coloque aqui os arquivos PWADS extras!";
+            this.label5.Text = "Level Warp";
             // 
             // tpServer
             // 
-            this.tpServer.Controls.Add(this.mtbIpAddress);
-            this.tpServer.Controls.Add(this.label16);
+            this.tpServer.Controls.Add(this.groupBox4);
             this.tpServer.Controls.Add(this.txtCommandLine);
             this.tpServer.Controls.Add(this.label15);
-            this.tpServer.Controls.Add(this.mtbTimeLimit);
-            this.tpServer.Controls.Add(this.mtbFragLimit);
-            this.tpServer.Controls.Add(this.mtbPlayers);
-            this.tpServer.Controls.Add(this.cbHost);
-            this.tpServer.Controls.Add(this.label10);
-            this.tpServer.Controls.Add(this.label9);
-            this.tpServer.Controls.Add(this.label7);
-            this.tpServer.Controls.Add(this.label6);
             this.tpServer.Location = new System.Drawing.Point(4, 22);
             this.tpServer.Name = "tpServer";
             this.tpServer.Size = new System.Drawing.Size(468, 224);
             this.tpServer.TabIndex = 4;
-            this.tpServer.Text = "Server";
+            this.tpServer.Text = "Server/Client";
             this.tpServer.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.cbOldDeathmatch);
+            this.groupBox4.Controls.Add(this.cbNoSound);
+            this.groupBox4.Controls.Add(this.cbNoSfx);
+            this.groupBox4.Controls.Add(this.cbNoMusic);
+            this.groupBox4.Controls.Add(this.cbNoMouse);
+            this.groupBox4.Controls.Add(this.cbNoMonsters);
+            this.groupBox4.Controls.Add(this.cbAltDeath);
+            this.groupBox4.Controls.Add(this.cbHost);
+            this.groupBox4.Controls.Add(this.mtbIpAddress);
+            this.groupBox4.Controls.Add(this.label7);
+            this.groupBox4.Controls.Add(this.label16);
+            this.groupBox4.Controls.Add(this.label9);
+            this.groupBox4.Controls.Add(this.label10);
+            this.groupBox4.Controls.Add(this.mtbPlayers);
+            this.groupBox4.Controls.Add(this.mtbTimeLimit);
+            this.groupBox4.Controls.Add(this.mtbFragLimit);
+            this.groupBox4.Location = new System.Drawing.Point(3, 3);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(459, 166);
+            this.groupBox4.TabIndex = 14;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Server Options";
+            // 
+            // cbOldDeathmatch
+            // 
+            this.cbOldDeathmatch.AutoSize = true;
+            this.cbOldDeathmatch.Location = new System.Drawing.Point(7, 42);
+            this.cbOldDeathmatch.Name = "cbOldDeathmatch";
+            this.cbOldDeathmatch.Size = new System.Drawing.Size(141, 17);
+            this.cbOldDeathmatch.TabIndex = 19;
+            this.cbOldDeathmatch.Text = "Deathmatch Old Version";
+            this.cbOldDeathmatch.UseVisualStyleBackColor = true;
+            this.cbOldDeathmatch.CheckedChanged += new System.EventHandler(this.cbOldDeathmatch_CheckedChanged);
+            // 
+            // cbNoSound
+            // 
+            this.cbNoSound.AutoSize = true;
+            this.cbNoSound.Location = new System.Drawing.Point(207, 88);
+            this.cbNoSound.Name = "cbNoSound";
+            this.cbNoSound.Size = new System.Drawing.Size(74, 17);
+            this.cbNoSound.TabIndex = 18;
+            this.cbNoSound.Text = "No Sound";
+            this.toolTip1.SetToolTip(this.cbNoSound, "Desativa todos os efeitos de som e músicas");
+            this.cbNoSound.UseVisualStyleBackColor = true;
+            this.cbNoSound.CheckedChanged += new System.EventHandler(this.cbNoSound_CheckedChanged);
+            // 
+            // cbNoSfx
+            // 
+            this.cbNoSfx.AutoSize = true;
+            this.cbNoSfx.Location = new System.Drawing.Point(207, 65);
+            this.cbNoSfx.Name = "cbNoSfx";
+            this.cbNoSfx.Size = new System.Drawing.Size(63, 17);
+            this.cbNoSfx.TabIndex = 17;
+            this.cbNoSfx.Text = "No SFX";
+            this.cbNoSfx.UseVisualStyleBackColor = true;
+            this.cbNoSfx.CheckedChanged += new System.EventHandler(this.cbNoSfx_CheckedChanged);
+            // 
+            // cbNoMusic
+            // 
+            this.cbNoMusic.AutoSize = true;
+            this.cbNoMusic.Location = new System.Drawing.Point(7, 134);
+            this.cbNoMusic.Name = "cbNoMusic";
+            this.cbNoMusic.Size = new System.Drawing.Size(71, 17);
+            this.cbNoMusic.TabIndex = 16;
+            this.cbNoMusic.Text = "No Music";
+            this.cbNoMusic.UseVisualStyleBackColor = true;
+            this.cbNoMusic.CheckedChanged += new System.EventHandler(this.cbNoMusic_CheckedChanged);
+            // 
+            // cbNoMouse
+            // 
+            this.cbNoMouse.AutoSize = true;
+            this.cbNoMouse.Location = new System.Drawing.Point(7, 111);
+            this.cbNoMouse.Name = "cbNoMouse";
+            this.cbNoMouse.Size = new System.Drawing.Size(75, 17);
+            this.cbNoMouse.TabIndex = 15;
+            this.cbNoMouse.Text = "No Mouse";
+            this.cbNoMouse.UseVisualStyleBackColor = true;
+            this.cbNoMouse.CheckedChanged += new System.EventHandler(this.cbNoMouse_CheckedChanged);
+            // 
+            // cbNoMonsters
+            // 
+            this.cbNoMonsters.AutoSize = true;
+            this.cbNoMonsters.Location = new System.Drawing.Point(7, 88);
+            this.cbNoMonsters.Name = "cbNoMonsters";
+            this.cbNoMonsters.Size = new System.Drawing.Size(86, 17);
+            this.cbNoMonsters.TabIndex = 14;
+            this.cbNoMonsters.Text = "No Monsters";
+            this.toolTip1.SetToolTip(this.cbNoMonsters, "Desativa os monstros. Eles não irão aparecer no jogo.");
+            this.cbNoMonsters.UseVisualStyleBackColor = true;
+            this.cbNoMonsters.CheckedChanged += new System.EventHandler(this.cbNoMonters_CheckedChanged);
+            // 
+            // cbAltDeath
+            // 
+            this.cbAltDeath.AutoSize = true;
+            this.cbAltDeath.Location = new System.Drawing.Point(7, 65);
+            this.cbAltDeath.Name = "cbAltDeath";
+            this.cbAltDeath.Size = new System.Drawing.Size(108, 17);
+            this.cbAltDeath.TabIndex = 13;
+            this.cbAltDeath.Text = "Deathmatch v2.0";
+            this.cbAltDeath.UseVisualStyleBackColor = true;
+            this.cbAltDeath.CheckedChanged += new System.EventHandler(this.cbAltDeath_CheckedChanged);
+            // 
+            // cbHost
+            // 
+            this.cbHost.AutoSize = true;
+            this.cbHost.Location = new System.Drawing.Point(7, 19);
+            this.cbHost.Name = "cbHost";
+            this.cbHost.Size = new System.Drawing.Size(124, 17);
+            this.cbHost.TabIndex = 5;
+            this.cbHost.Text = "Enable Host (Server)";
+            this.cbHost.UseVisualStyleBackColor = true;
             // 
             // mtbIpAddress
             // 
-            this.mtbIpAddress.Location = new System.Drawing.Point(368, 59);
+            this.mtbIpAddress.Location = new System.Drawing.Point(357, 25);
             this.mtbIpAddress.Mask = "000.000.000.000";
             this.mtbIpAddress.Name = "mtbIpAddress";
             this.mtbIpAddress.Size = new System.Drawing.Size(97, 20);
             this.mtbIpAddress.TabIndex = 12;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(204, 9);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(41, 13);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Players";
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(365, 43);
+            this.label16.Location = new System.Drawing.Point(354, 9);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(97, 13);
+            this.label16.Size = new System.Drawing.Size(89, 13);
             this.label16.TabIndex = 11;
-            this.label16.Text = "Endereço IP (IPv4)";
+            this.label16.Text = "IP Address (IPv4)";
             // 
-            // txtCommandLine
+            // label9
             // 
-            this.txtCommandLine.Location = new System.Drawing.Point(6, 98);
-            this.txtCommandLine.Name = "txtCommandLine";
-            this.txtCommandLine.Size = new System.Drawing.Size(459, 20);
-            this.txtCommandLine.TabIndex = 10;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(307, 9);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(47, 13);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Timelimit";
             // 
-            // label15
+            // label10
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(3, 82);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(165, 13);
-            this.label15.TabIndex = 9;
-            this.label15.Text = "Parametros de linha de comando:";
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(256, 9);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(45, 13);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "Fraglimit";
+            // 
+            // mtbPlayers
+            // 
+            this.mtbPlayers.Location = new System.Drawing.Point(207, 25);
+            this.mtbPlayers.Mask = "00";
+            this.mtbPlayers.Name = "mtbPlayers";
+            this.mtbPlayers.Size = new System.Drawing.Size(44, 20);
+            this.mtbPlayers.TabIndex = 6;
             // 
             // mtbTimeLimit
             // 
-            this.mtbTimeLimit.Location = new System.Drawing.Point(318, 59);
+            this.mtbTimeLimit.Location = new System.Drawing.Point(307, 25);
             this.mtbTimeLimit.Mask = "00";
             this.mtbTimeLimit.Name = "mtbTimeLimit";
             this.mtbTimeLimit.Size = new System.Drawing.Size(44, 20);
@@ -640,66 +622,38 @@
             // 
             // mtbFragLimit
             // 
-            this.mtbFragLimit.Location = new System.Drawing.Point(268, 59);
+            this.mtbFragLimit.Location = new System.Drawing.Point(257, 25);
             this.mtbFragLimit.Mask = "00";
             this.mtbFragLimit.Name = "mtbFragLimit";
             this.mtbFragLimit.Size = new System.Drawing.Size(44, 20);
             this.mtbFragLimit.TabIndex = 7;
             // 
-            // mtbPlayers
+            // txtCommandLine
             // 
-            this.mtbPlayers.Location = new System.Drawing.Point(218, 59);
-            this.mtbPlayers.Mask = "00";
-            this.mtbPlayers.Name = "mtbPlayers";
-            this.mtbPlayers.Size = new System.Drawing.Size(44, 20);
-            this.mtbPlayers.TabIndex = 6;
+            this.txtCommandLine.Location = new System.Drawing.Point(6, 198);
+            this.txtCommandLine.Name = "txtCommandLine";
+            this.txtCommandLine.Size = new System.Drawing.Size(459, 20);
+            this.txtCommandLine.TabIndex = 10;
+            this.txtCommandLine.TextChanged += new System.EventHandler(this.txtCommandLine_TextChanged);
             // 
-            // cbHost
+            // label15
             // 
-            this.cbHost.AutoSize = true;
-            this.cbHost.Location = new System.Drawing.Point(6, 61);
-            this.cbHost.Name = "cbHost";
-            this.cbHost.Size = new System.Drawing.Size(137, 17);
-            this.cbHost.TabIndex = 5;
-            this.cbHost.Text = "Habilitar Host (Servidor)";
-            this.cbHost.UseVisualStyleBackColor = true;
-            this.cbHost.CheckedChanged += new System.EventHandler(this.cbHost_CheckedChanged);
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(3, 182);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(131, 13);
+            this.label15.TabIndex = 9;
+            this.label15.Text = "Command line parameters:";
             // 
-            // label10
+            // tabPage1
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(267, 43);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(45, 13);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "Fraglimit";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(318, 43);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(47, 13);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "Timelimit";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(215, 43);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(41, 13);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Players";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 11);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(260, 13);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Ajuste as opções para a criação do servidor de jogos.";
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(468, 224);
+            this.tabPage1.TabIndex = 5;
+            this.tabPage1.Text = "Extra Parameters";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // btnCancel
             // 
@@ -707,7 +661,7 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 3;
-            this.btnCancel.Text = "Cancelar";
+            this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -727,7 +681,7 @@
             this.btnDefault.Name = "btnDefault";
             this.btnDefault.Size = new System.Drawing.Size(75, 23);
             this.btnDefault.TabIndex = 5;
-            this.btnDefault.Text = "Padrão";
+            this.btnDefault.Text = "Default";
             this.btnDefault.UseVisualStyleBackColor = true;
             this.btnDefault.Click += new System.EventHandler(this.btnDefault_Click);
             // 
@@ -742,9 +696,14 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
-            this.Text = "BrDOOM Launcher 1.0.0 (Alpha)";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "BrDOOM \'SkullTag\' Launcher 1.0.0 (Alpha)";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -757,10 +716,10 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.tpPwads.ResumeLayout(false);
-            this.tpPwads.PerformLayout();
             this.tpServer.ResumeLayout(false);
             this.tpServer.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -781,32 +740,19 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tpLauncher;
-        private System.Windows.Forms.TabPage tpPwads;
         private System.Windows.Forms.TabPage tpServer;
-        private System.Windows.Forms.ComboBox cbSourcePort;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnLaunch;
         private System.Windows.Forms.TextBox txtLevelWarp;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.MaskedTextBox mtbTimeLimit;
         private System.Windows.Forms.MaskedTextBox mtbFragLimit;
         private System.Windows.Forms.MaskedTextBox mtbPlayers;
         private System.Windows.Forms.CheckBox cbHost;
         private System.Windows.Forms.Button btnDefault;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox txtCommandLine;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.MaskedTextBox mtbIpAddress;
@@ -828,6 +774,16 @@
         private System.Windows.Forms.RadioButton rbSkillNormal;
         private System.Windows.Forms.RadioButton rbSkillFacil;
         private System.Windows.Forms.RadioButton rbSkillExtraFacil;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.CheckBox cbAltDeath;
+        private System.Windows.Forms.CheckBox cbNoMonsters;
+        private System.Windows.Forms.CheckBox cbNoSfx;
+        private System.Windows.Forms.CheckBox cbNoMusic;
+        private System.Windows.Forms.CheckBox cbNoMouse;
+        private System.Windows.Forms.CheckBox cbNoSound;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.CheckBox cbOldDeathmatch;
     }
 }
 
