@@ -35,11 +35,12 @@ namespace BrDOOM
         }
 
         //public void runGame(string engine, int mode, int server, int port)
-        public int runGame(string argValor)
+        public int runGame(string argEngine, string argParameters)
         {
             try
             {
-                Process.Start(argValor);
+                Process.Start(argEngine, argParameters);
+                //Process.Start(@"skulltag.exe", " -iwad " + iwad + " " + skill + " " + gamemode + " " + warp);
             }
             catch (Exception erro)
             {

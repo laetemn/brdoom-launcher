@@ -18,6 +18,9 @@ namespace BrDOOM
         private String warp;
         private String totalParameters;
         private String sourceport;
+        private String extraOptions;
+        private String getEngine;
+        private String getParameters;
         private int getValor;
         private int gamemode;
         private int skill;
@@ -48,13 +51,8 @@ namespace BrDOOM
             StartGame playNow = new StartGame();
 
             // Validação básica ^^
-            // Seleção do sourceport
-            if (cbSourcePort.Text == "Selecione...")
-            {
-                MessageBox.Show("Você deve selecionar um sourceport!");
-            }
             // Seleção do IWAD
-            else if (rbIwadDoom.Checked == false && rbIwadDoom2.Checked == false && rbIwadTnt.Checked == false && rbIwadPlutonia.Checked == false && rbIwadHeretic.Checked == false && rbIwadHexen.Checked == false)
+            if (rbIwadDoom.Checked == false && rbIwadDoom2.Checked == false && rbIwadTnt.Checked == false && rbIwadPlutonia.Checked == false && rbIwadHeretic.Checked == false && rbIwadHexen.Checked == false)
             {
                 MessageBox.Show("Você deve selecionar um IWAD!");
             }
@@ -75,17 +73,30 @@ namespace BrDOOM
                 {
                     warp = txtLevelWarp.Text;
                 }
+
                 // Passagem de parametros para o processo de carregamento do port
                 // A ordem a ser seguida está listada abaixo
                 // SourcePort, IWAD, Dificuldade, GameMode, LevelWarp
-                totalParameters = sourceport + " -iwad " + iwad + " " + skill + " " + gamemode + " " + warp;
-                getValor = playNow.runGame(totalParameters);
+                getEngine = "skulltag";
+                getParameters = " -iwad " + iwad + " -skill " + skill + " " + gamemode + " -warp " + warp + extraOptions;
+                getValor = playNow.runGame(getEngine, getParameters);
+
+                //try
+                //{
+                //    playNow.runGame(totalParameters);
+                //}
+                //catch (Exception error)
+                //{
+                //    MessageBox.Show(error.ToString());
+                //}
+
                 if (getValor == 1)
                 {
                     MessageBox.Show("Não foi possível iniciar o programa!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
                 // Debug besta =P
-                MessageBox.Show(totalParameters);
+              //  MessageBox.Show(totalParameters);
             }
             //MessageBox.Show(mtbIpAddress.Text);
         }
@@ -98,23 +109,6 @@ namespace BrDOOM
         private void Form1_Load(object sender, EventArgs e)
         {
             EnableDisableHostOptions(0);
-        }
-
-        /// <summary>
-        /// Função para habilitar/desabilitar a opção servidor
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void cbHost_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbHost.Checked)
-            {
-                EnableDisableHostOptions(1);
-            }
-            else
-            {
-                EnableDisableHostOptions(0);
-            }
         }
 
         /// <summary>
@@ -271,10 +265,6 @@ namespace BrDOOM
             rbDeathMatch.Checked = false;
             rbCooperative.Checked = false;
 
-            // Reset do conteúdo do combobox - SourcePort
-            cbSourcePort.ResetText();
-            cbSourcePort.Text = "Selecione...";
-
             // Reset do conteúdo do LevelWarp
             txtLevelWarp.ResetText();
 
@@ -289,121 +279,152 @@ namespace BrDOOM
         /// <param name="e"></param>
         private void txtLevelWarp_TextChanged(object sender, EventArgs e)
         {
-            warp = txtLevelWarp.Text;
+            if (txtLevelWarp.Text != "")
+            {
+                warp = txtLevelWarp.Text;
+            }
+            else
+            {
+                warp = " ";
+            }
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void sobreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            myAbout myboutok = new myAbout();
+            myboutok.ShowDialog();
+        }
+
+        private void manualToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Sorry, but this feature has not yet been implemented!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Sorry, but this feature has not yet been implemented!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void salvarComoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Sorry, but this feature has not yet been implemented!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         /// <summary>
-        /// Função combobox para seleção do sourceport à ser utilizado
+        /// Função para habilitar/desabilitar a opção servidor
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void cbSourcePort_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbHost_CheckedChanged(object sender, EventArgs e)
         {
-            switch (cbSourcePort.Text)
+            if (cbHost.Checked)
             {
-                case "ATB Doom (Legado)":
-                    sourceport = "atb";
-                    break;
-                case "BZDoom (Legado)":
-                    sourceport = "bzdoom";
-                    break;
-                case "CGDoom (Legado)":
-                    sourceport = "cgdoom";
-                    break;
-                case "Chocolate Doom":
-                    sourceport = "chocodoom";
-                    break;
-                case "csDoom (Legado)":
-                    sourceport = "csdoom";
-                    break;
-                case "Doom 3D (Legado)":
-                    sourceport = "doom3d";
-                    break;
-                case "Doom64 EX":
-                    sourceport = "doom64ex";
-                    break;
-                case "DoomGL (Legado)":
-                    sourceport = "doomgl";
-                    break;
-                case "Doom Legacy":
-                    sourceport = "legacy";
-                    break;
-                case "Doom Plus (Legado)":
-                    sourceport = "doomplus";
-                    break;
-                case "Doomsday":
-                    sourceport = "doomsday";
-                    break;
-                case "EDGE (Legado)":
-                    sourceport = "edge";
-                    break;
-                case "Eternity Engine (Legado)":
-                    sourceport = "eternity";
-                    break;
-                case "glBoom (Legado)":
-                    sourceport = "glboom";
-                    break;
-                case "GZDoom":
-                    sourceport = "gzdoom";
-                    break;
-                case "IA SDoom (Legado)":
-                    sourceport = "iasdoom";
-                    break;
-                case "Mocha Doom (Legado)":
-                    sourceport = "mochadoom";
-                    break;
-                case "Odamex":
-                    sourceport = "odamex";
-                    break;
-                case "Power Doom (Legado)":
-                    sourceport = "pwdoom";
-                    break;
-                case "PrBoom (Legado)":
-                    sourceport = "prboom";
-                    break;
-                case "PrBoom+ (Legado)":
-                    sourceport = "prboom+";
-                    break;
-                case "ReMooD":
-                    sourceport = "remood";
-                    break;
-                case "Risen3D":
-                    sourceport = "risen3d";
-                    break;
-                case "SkullTag":
-                    sourceport = "skulltag";
-                    break;
-                case "Smack My Marine Up (Legado)":
-                    sourceport = "smmu";
-                    break;
-                case "Vavoom (Legado)":
-                    sourceport = "vavoom";
-                    break;
-                case "WDMP (Legado)":
-                    sourceport = "wdmp";
-                    break;
-                case "Win32 Doom (Legado)":
-                    sourceport = "w32doom";
-                    break;
-                case "WinDoom (Legado)":
-                    sourceport = "windoom";
-                    break;
-                case "WinMBF (Legado)":
-                    sourceport = "winmbf";
-                    break;
-                case "ZDaemon":
-                    sourceport = "zdaemon";
-                    break;
-                case "ZDoom":
-                    sourceport = "zdoom";
-                    break;
-                case "ZDoomGL (Legado)":
-                    sourceport = "zdoomgl";
-                    break;
+                EnableDisableHostOptions(1);
             }
-            //sourceport = cbSourcePort.Text;
+            else
+            {
+                EnableDisableHostOptions(0);
+            }
         }
 
+        /// <summary>
+        /// Funções extras para o servidor
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cbAltDeath_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbAltDeath.Checked)
+            {
+                extraOptions = "-altdeath";
+            }
+            else
+            {
+                extraOptions = " ";
+            }
+        }
+
+        private void cbNoMonters_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbNoMonsters.Checked)
+            {
+                extraOptions = "-nomonsters";
+            }
+            else
+            {
+                extraOptions = " ";
+            }
+        }
+
+        private void cbNoMouse_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbNoMouse.Checked)
+            {
+                extraOptions = "-nomouse";
+            }
+            else
+            {
+                extraOptions = " ";
+            }
+        }
+
+        private void cbNoMusic_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbNoMusic.Checked)
+            {
+                extraOptions = "-nomusic";
+            }
+            else
+            {
+                extraOptions = " ";
+            }
+        }
+
+        private void cbNoSfx_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbNoSfx.Checked)
+            {
+                extraOptions = "-nosfx";
+            }
+            else
+            {
+                extraOptions = " ";
+            }
+        }
+
+        private void cbNoSound_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbNoSound.Checked)
+            {
+                extraOptions = "-nosound";
+            }
+            else
+            {
+                extraOptions = " ";
+            }
+        }
+
+        private void cbOldDeathmatch_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbOldDeathmatch.Checked)
+            {
+                extraOptions = "-deathmatch";
+            }
+            else
+            {
+                extraOptions = " ";
+            }
+        }
+
+        private void txtCommandLine_TextChanged(object sender, EventArgs e)
+        {
+            extraOptions = txtCommandLine.Text;
+        }
 
     }
 }
